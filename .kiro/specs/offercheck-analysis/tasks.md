@@ -146,7 +146,7 @@
   - Responsive sizing
   - _Requirements: 1.3, 17.1, 17.2_
 
-- [ ] 5.5 Create ScoreDisplay component
+- [X] 5.5 Create ScoreDisplay component
   - Display score from 1-100
   - Color-coded background (green/yellow/red)
   - Large, readable text

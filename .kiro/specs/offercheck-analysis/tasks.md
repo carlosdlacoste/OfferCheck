@@ -152,7 +152,7 @@
   - Large, readable text
   - _Requirements: 11.1, 12.1, 13.1, 14.1_
 
-- [ ] 5.6 Create GreenFlagsList component
+- [X] 5.6 Create GreenFlagsList component
   - Display count of Green Flags
   - List each flag with matched text
   - Green accent styling

@@ -46,7 +46,7 @@
 
 ### 3. Implement Pattern Matching Logic
 
-- [ ] 3.1 Implement salary transparency patterns (Green Flags)
+- [x] 3.1 Implement salary transparency patterns (Green Flags)
   - Create regex patterns for `$X-$Y`, `€X-€Y`, "de X a Y", "entre X e Y"
   - Handle international salary formats
   - Export to `patterns/greenFlags.ts`

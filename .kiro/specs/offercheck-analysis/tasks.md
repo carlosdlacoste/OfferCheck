@@ -158,7 +158,7 @@
   - Green accent styling
   - _Requirements: 13.1, 13.2, 13.3_
 
-- [ ] 5.7 Create RedFlagsList component
+- [x] 5.7 Create RedFlagsList component
   - Display count of Red Flags
   - List each flag with matched text
   - Red accent styling

@@ -3,30 +3,30 @@ import analyzeJobDescription from '../useAnalyzer';
 
 describe('analyzeJobDescription', () => {
   describe('Input Validation', () => {
-    it(`should throw error for empty input`, () => {
-      expect(() => analyzeJobDescription('')).toThrow(`La descripción no puede estar vacía`);
+    it('should throw error for empty input', () => {
+      expect(() => analyzeJobDescription('')).toThrow('La descripciÃ³n no puede estar vacÃ­a');
     });
 
-    it(`should throw error for whitespace-only input`, () => {
-      expect(() => analyzeJobDescription(`   `)).toThrow(`La descripción no puede estar vacía`);
+    it('should throw error for whitespace-only input', () => {
+      expect(() => analyzeJobDescription('   ')).toThrow('La descripciÃ³n no puede estar vacÃ­a');
     });
 
-    it(`should throw error for input less than 100 characters`, () => {
-      const shortText = `This is a very short job description that is definitely less than one hundred characters`;
-      expect(() => analyzeJobDescription(shortText)).toThrow(`La descripción es demasiado corta para un análisis significativo`);
+    it('should throw error for input less than 100 characters', () => {
+      const shortText = 'This is a very short job description that is definitely less than one hundred characters';
+      expect(() => analyzeJobDescription(shortText)).toThrow('La descripciÃ³n es demasiado corta para un anÃ¡lisis significativo');
     });
 
-    it(`should throw error for input more than 50000 characters`, () => {
-      const longText = `x`.repeat(50001);
-      expect(() => analyzeJobDescription(longText)).toThrow(`La descripción es demasiado larga`);
+    it('should throw error for input more than 50000 characters', () => {
+      const longText = 'x'.repeat(50001);
+      expect(() => analyzeJobDescription(longText)).toThrow('La descripciÃ³n es demasiado larga');
     });
   });
 
   describe('Pattern Matching', () => {
     const validDescription = `
-      Oferta de empleo para Desarrollador Frontend en empresa tecnológica.
+      Oferta de empleo para Desarrollador Frontend en empresa tecnolÃ³gica.
       
-      Salario: entre 40.000€ y 60.000€ anuales.
+      Salario: entre 40.000â‚¬ y 60.000â‚¬ anuales.
       Modalidad: 100% remoto con horario flexible.
       
       Requisitos:
@@ -36,12 +36,12 @@ describe('analyzeJobDescription', () => {
       - Conocimientos de Docker y AWS
       
       Beneficios:
-      - Formación continua
+      - FormaciÃ³n continua
       - Work-life balance
       - Horario adaptable
       - Desarrollo profesional
       
-      Proceso selectivo: 3 fases (entrevista técnica, prueba práctica,HR)
+      Proceso selectivo: 3 fases (entrevista tÃ©cnica, prueba prÃ¡ctica,HR)
     `;
 
     it(`should detect green flags`, () => {
@@ -99,14 +99,14 @@ describe('analyzeJobDescription', () => {
       expect(techCount).toBeGreaterThan(8);
     });
 
-    it(`should detect stack técnico delimitado`, () => {
+    it(`should detect stack tï¿½cnico delimitado`, () => {
       // Description with 3-8 technologies (delimited stack)
       const delimitedStackDescription = `
         Buscamos un desarrollador con experiencia en React, TypeScript y Node.js.
         Experiencia con PostgreSQL y Docker.
         
         100% remoto con horario flexible.
-        Salario: de 45.000€ a 55.000€.
+        Salario: de 45.000ï¿½ a 55.000ï¿½.
       `;
       
       const result = analyzeJobDescription(delimitedStackDescription);
@@ -130,7 +130,7 @@ describe('analyzeJobDescription', () => {
         Salario: $100.000 - $120.000.
         100% remoto. Horario flexible.
         Requisitos: React, Vue, Angular, Node.js, Python.
-        Trabajo bajo presión.
+        Trabajo bajo presiï¿½n.
       `;
       
       const result = analyzeJobDescription(specialCharsDescription);
@@ -140,7 +140,7 @@ describe('analyzeJobDescription', () => {
     });
 
     it(`should handle empty text with spaces`, () => {
-      expect(() => analyzeJobDescription(`  \n\n  `)).toThrow(`La descripción no puede estar vacía`);
+      expect(() => analyzeJobDescription(`  \n\n  `)).toThrow(`La descripciï¿½n no puede estar vacï¿½a`);
     });
 
     it(`should handle text at boundary lengths`, () => {

@@ -203,7 +203,7 @@
   - Type-safe functions
   - _Requirements: 11.1, 11.2, 11.3, 11.4, 11.5, 11.6, 12.1, 12.2, 12.3_
 
-- [ ] 6.4 Wire all components together
+- [X] 6.4 Wire all components together
   - Connect input button to analysis
   - Display results when available
   - Show errors for invalid input

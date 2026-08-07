@@ -101,7 +101,7 @@
   - Count stack technologies and detect todoterreno profiles
   - _Requirements: 2.1, 2.2, 2.3, 9.1, 9.2_
 
-- [ ] 4.3 Implement score calculation
+- [X] 4.3 Implement score calculation
   - Start with base score of 50
   - Add 10 points per Green Flag
   - Subtract 15 points per Red Flag

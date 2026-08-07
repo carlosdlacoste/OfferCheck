@@ -73,7 +73,7 @@
   - Export to `patterns/greenFlags.ts`
   - _Requirements: 6.1, 6.2, 6.3_
 
-- [ ] 3.6 Implement overwork/red flag patterns
+- [X] 3.6 Implement overwork/red flag patterns
   - Create regex for "trabajo bajo presión", "ponerse la camiseta", "disponibilidad 24/7", etc.
   - Export to `patterns/redFlags.ts`
   - _Requirements: 7.1, 7.2, 7.3_

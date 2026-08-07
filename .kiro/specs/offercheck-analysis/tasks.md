@@ -18,7 +18,7 @@
   - Install dependencies
   - _Requirements: 18.1, 18.2, 18.3_
 
-- [ ] 1.2 Configure Tailwind CSS
+- [x] 1.2 Configure Tailwind CSS
   - Install Tailwind CSS and dependencies
   - Configure `tailwind.config.js` with dark theme by default
   - Import Tailwind in `src/index.css`

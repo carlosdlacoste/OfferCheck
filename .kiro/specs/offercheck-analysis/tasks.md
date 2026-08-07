@@ -90,7 +90,7 @@
 
 ### 4. Implement Core Analysis Engine
 
-- [ ] 4.1 Implement pattern matching function
+- [X] 4.1 Implement pattern matching function
   - Create `findFlags()` helper to search text for patterns
   - Return matched flags with type, text, and category
   - _Requirements: 3.3, 4.3, 5.3, 6.3, 7.2, 8.2, 9.2, 10.2_

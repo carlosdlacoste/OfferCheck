@@ -56,3 +56,29 @@ export const REMOTE_PATTERNS: Pattern[] = [
     category: 'modalidad_remota'
   }
 ];
+
+// Flexibility Patterns (Green Flags)
+// Detects: "flexibilidad horaria", "horario flexible", "horario adaptado", "work-life balance"
+
+export const FLEXIBILITY_PATTERNS: Pattern[] = [
+  {
+    regex: /\bflexibilidad\s+horaria\b/gi,
+    name: 'Flexible Hours',
+    category: 'flexibilidad'
+  },
+  {
+    regex: /\bhorario\s+flexible\b/gi,
+    name: 'Flexible Schedule',
+    category: 'flexibilidad'
+  },
+  {
+    regex: /\bhorario\s+adaptado\b/gi,
+    name: 'Adaptable Schedule',
+    category: 'flexibilidad'
+  },
+  {
+    regex: /\bwork-life\s+balance\b/gi,
+    name: 'Work-Life Balance',
+    category: 'flexibilidad'
+  }
+];

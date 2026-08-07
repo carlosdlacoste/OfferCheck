@@ -57,7 +57,7 @@
   - Export to `patterns/greenFlags.ts`
   - _Requirements: 4.1, 4.2, 4.3, 4.4_
 
-- [ ] 3.3 Implement flexibility patterns (Green Flags)
+- [x] 3.3 Implement flexibility patterns (Green Flags)
   - Create regex for "flexibilidad horaria", "horario flexible", "horario adaptado", "work-life balance"
   - Export to `patterns/greenFlags.ts`
   - _Requirements: 4.1, 4.2, 4.3, 4.4_

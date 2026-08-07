@@ -47,6 +47,9 @@ const STACK_CATEGORIES = [
   { name: 'testing', patterns: TESTING_PATTERNS }
 ];
 
+// Flag types that count as technology-related
+const TECHNOLOGY_CATEGORIES = ['frontend', 'backend', 'database', 'devops', 'testing'];
+
 /**
  * Validates input text length according to requirements
  * @throws Error with appropriate message if validation fails
@@ -102,8 +105,17 @@ function countStackTechnologies(text: string): {
 }
 
 /**
+ * Checks if text contains excessive hiring process indicators
+ */
+function hasExcessiveHiringProcess(text: string): boolean {
+  // Check for patterns like "más de 3 fases", "más de 4 fases", etc.
+  const excessiveHiringRegex = /\b(más\s+de\s+\d+\s+fases|múltiples\s+pruebas\s+técnicas|varias\s+entrevistas\s+técnicas|proceso\s+selectivo\s+extenso)\b/gi;
+  return excessiveHiringRegex.test(text);
+}
+
+/**
  * Main analysis function for job descriptions
- * Implements requirements 2.1, 2.2, 2.3, 9.1, 9.2
+ * Implements requirements 2.1, 2.2, 2.3, 9.1, 9.2, 10.1, 10.2
  */
 export default function analyzeJobDescription(text: string): AnalysisResult {
   const startTime = performance.now();
@@ -119,12 +131,35 @@ export default function analyzeJobDescription(text: string): AnalysisResult {
   findFlags(text, GREEN_FLAG_PATTERNS, greenFlags);
   findFlags(text, RED_FLAG_PATTERNS, redFlags);
   
-  // Count stack technologies (requirement 9.2)
+  // Count stack technologies (requirements 9.1, 9.2)
   const stackData = countStackTechnologies(text);
   
+  // Detect stack técnico delimitado (3+ technologies)
+  if (stackData.isStackDelimitado) {
+    greenFlags.push({
+      flagType: 'stack_tecnico',
+      matchedText: 'Stack técnico delimitado',
+      category: 'stack'
+    });
+  }
+  
   // Detect todoterreno profiles (requirement 9.1)
-  const excessiveTechnologies = stackData.technologyCount > 8;
-  const excessiveCategories = stackData.categoryCount >= 3;
+  if (stackData.isTodoterreno) {
+    redFlags.push({
+      flagType: 'todoterreno',
+      matchedText: 'Perfil todoterreno excesivo',
+      category: 'excesivo'
+    });
+  }
+  
+  // Check for excessive hiring process (requirement 10.1, 10.2)
+  if (hasExcessiveHiringProcess(text)) {
+    redFlags.push({
+      flagType: 'proceso_selectivo_extenso',
+      matchedText: 'Proceso selectivo extenso',
+      category: 'proceso_selectivo'
+    });
+  }
   
   const processingTime = performance.now() - startTime;
   

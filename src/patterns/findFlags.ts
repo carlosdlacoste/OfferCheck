@@ -1,4 +1,5 @@
-import type { Pattern, FlagResult } from '../types/analysis';
+import type { Pattern } from './types';
+import type { FlagResult } from '../types/analysis';
 
 /**
  * Searches text for all patterns in a patterns array and collects matches.

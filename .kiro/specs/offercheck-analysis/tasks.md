@@ -128,7 +128,7 @@
   - Use dark theme styling
   - _Requirements: 16.1, 16.2_
 
-- [ ] 5.2 Create Footer component
+- [x] 5.2 Create Footer component
   - Show project information and credits
   - Include links if needed
   - Consistent with dark theme

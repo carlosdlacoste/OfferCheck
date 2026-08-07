@@ -38,7 +38,7 @@
   - Export to `types/analysis.ts`
   - _Requirements: 11.1, 12.1, 13.1, 14.1, 15.1_
 
-- [ ] 2.2 Create pattern types and interfaces
+- [x] 2.2 Create pattern types and interfaces
   - Define `Pattern` interface with regex, name, category
   - Define arrays for Green Flags and Red Flags patterns
   - Export to `patterns/types.ts`

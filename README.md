@@ -1,75 +1,30 @@
-# React + TypeScript + Vite
+# 🔍 OfferCheck
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**OfferCheck** es una herramienta web para desarrolladores y postulantes en IT que analiza ofertas de trabajo en tiempo real, identificando buenas prácticas (**Green Flags**) y alertas de condiciones desfavorables o toxicidad (**Red Flags**).
 
-Currently, two official plugins are available:
+## 🚀 Tecnologías empleadas
+- **Frontend:** React + TypeScript
+- **Estilos:** Tailwind CSS (Tema Oscuro por defecto)
+- **Bundler:** Vite
+- **Arquitectura:** Spec-Driven Development (SDD) con procesamiento 100% cliente/navegador.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🛠️ Instalación y Ejecución Local
 
-## React Compiler
+1. **Clonar el repositorio:**
+   ```bash
+   git clone [https://github.com/tu-usuario/offer-check.git](https://github.com/tu-usuario/offer-check.git)
+   cd offer-check
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+   ```
+2. **instalar dependencias:**
+   ```bash
 
-## Expanding the ESLint configuration
+   npm install
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+   ```
+3. **Iniciar el servidor:**
+   ```bash
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
+   npm run dev
+   
+   ```

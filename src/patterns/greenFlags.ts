@@ -1,4 +1,4 @@
-import { Pattern } from './types';
+import type { Pattern } from './types';
 
 // Salary Transparency Patterns (Green Flags)
 // Detects: $X-$Y, €X-€Y, "de X a Y", "entre X e Y", "from X to Y"
@@ -80,5 +80,49 @@ export const FLEXIBILITY_PATTERNS: Pattern[] = [
     regex: /\bwork-life\s+balance\b/gi,
     name: 'Work-Life Balance',
     category: 'flexibilidad'
+  }
+];
+
+// Technology Stack Patterns (Green Flags)
+// Detects: frontend frameworks, backend languages, databases, DevOps tools, testing frameworks
+// Categories tracked: frontend, backend, database, devops, testing
+
+export const FRONTEND_PATTERNS: Pattern[] = [
+  {
+    regex: /\b(React|Vue|Angular|Svelte|Next|Nuxt|Remix)\b/gi,
+    name: 'Frontend Framework',
+    category: 'frontend'
+  }
+];
+
+export const BACKEND_PATTERNS: Pattern[] = [
+  {
+    regex: /\b(JavaScript|TypeScript|Python|Java|C#|PHP|Ruby|Go|Rust|Node|Deno)\b/gi,
+    name: 'Backend Language',
+    category: 'backend'
+  }
+];
+
+export const DATABASE_PATTERNS: Pattern[] = [
+  {
+    regex: /\b(PostgreSQL|MySQL|MongoDB|Redis|Elasticsearch|DynamoDB|Firebase|Supabase)\b/gi,
+    name: 'Database',
+    category: 'database'
+  }
+];
+
+export const DEVOPS_PATTERNS: Pattern[] = [
+  {
+    regex: /\b(Docker|Kubernetes|AWS|Azure|GCP|CI\/CD|Jenkins|GitHub\s+Actions|GitLab\s+CI)\b/gi,
+    name: 'DevOps',
+    category: 'devops'
+  }
+];
+
+export const TESTING_PATTERNS: Pattern[] = [
+  {
+    regex: /\b(Jest|Cypress|Playwright|Mocha|Chai|Selenium|PHPUnit|PyTest)\b/gi,
+    name: 'Testing Framework',
+    category: 'testing'
   }
 ];

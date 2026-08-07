@@ -1,6 +1,6 @@
 import { findFlags } from '../patterns/findFlags';
-import type { Pattern, FlagResult } from '../patterns/types';
-import type { AnalysisResult } from '../types/analysis';
+import type { Pattern } from '../patterns/types';
+import type { AnalysisResult, FlagResult } from '../types/analysis';
 import {
   SALARY_PATTERNS,
   REMOTE_PATTERNS,
@@ -17,6 +17,7 @@ import {
   SALARY_AMBIGUITY_PATTERNS,
   EXCESSIVE_HIRING_PATTERNS
 } from '../patterns/redFlags';
+import { calculateScore, getScoreColor, generateVerdict } from '../hooks/useScoreCalculation';
 
 // Combined pattern arrays for analysis
 const GREEN_FLAG_PATTERNS: Pattern[] = [
@@ -124,20 +125,14 @@ export default function analyzeJobDescription(text: string): AnalysisResult {
   // Detect todoterreno profiles (requirement 9.1)
   const excessiveTechnologies = stackData.technologyCount > 8;
   const excessiveCategories = stackData.categoryCount >= 3;
-  const isTodoterreno = excessiveTechnologies || excessiveCategories;
   
   const processingTime = performance.now() - startTime;
   
   return {
     textLength: text.length,
-    score: 0, // Will be calculated in task 4.3
-    color: 'green', // Will be determined in task 4.4
-    verdict: {
-      title: '',
-      description: '',
-      advice: '',
-      flagsThatInfluenced: []
-    }, // Will be generated in task 4.5
+    score: calculateScore(greenFlags, redFlags),
+    color: getScoreColor(calculateScore(greenFlags, redFlags)),
+    verdict: generateVerdict(calculateScore(greenFlags, redFlags), greenFlags, redFlags),
     greenFlags,
     redFlags,
     processingTime

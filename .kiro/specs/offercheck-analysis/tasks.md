@@ -68,7 +68,7 @@
   - Export to `patterns/greenFlags.ts`
   - _Requirements: 5.1, 5.2, 5.3_
 
-- [ ] 3.5 Implement development opportunity patterns (Green Flags)
+- [x] 3.5 Implement development opportunity patterns (Green Flags)
   - Create regex for "formación continua", "formación específica", "capacitación", etc.
   - Export to `patterns/greenFlags.ts`
   - _Requirements: 6.1, 6.2, 6.3_

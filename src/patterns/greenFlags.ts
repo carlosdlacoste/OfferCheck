@@ -126,3 +126,39 @@ export const TESTING_PATTERNS: Pattern[] = [
     category: 'testing'
   }
 ];
+
+// Development Opportunity Patterns (Green Flags)
+// Detects: "formación continua", "formación específica", "capacitación", "desarrollo profesional", "growth", "aprendizaje"
+
+export const DEVELOPMENT_PATTERNS: Pattern[] = [
+  {
+    regex: /\bformación\s+continua\b/gi,
+    name: 'Continuous Training',
+    category: 'desarrollo'
+  },
+  {
+    regex: /\bformación\s+específica\b/gi,
+    name: 'Specific Training',
+    category: 'desarrollo'
+  },
+  {
+    regex: /\bcapacitación\b/gi,
+    name: 'Training',
+    category: 'desarrollo'
+  },
+  {
+    regex: /\bdesarrollo\s+profesional\b/gi,
+    name: 'Professional Development',
+    category: 'desarrollo'
+  },
+  {
+    regex: /\bgrowth\b/gi,
+    name: 'Growth',
+    category: 'desarrollo'
+  },
+  {
+    regex: /\baprendizaje\b/gi,
+    name: 'Learning',
+    category: 'desarrollo'
+  }
+];

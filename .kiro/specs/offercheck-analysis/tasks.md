@@ -134,7 +134,7 @@
   - Consistent with dark theme
   - _Requirements: 16.1, 16.2_
 
-- [ ] 5.3 Create TextAreaInput component
+- [x] 5.3 Create TextAreaInput component
   - Large textarea for job description input
   - Placeholder text in Spanish
   - Support for long text input

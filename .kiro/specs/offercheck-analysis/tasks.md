@@ -176,7 +176,7 @@
   - Fade out when complete
   - _Requirements: 17.2_
 
-- [ ] 5.10 Create ErrorBanner component
+- [x] 5.10 Create ErrorBanner component
   - Display error messages in red banner
   - Icon and message styling
   - Auto-dismiss or manual close

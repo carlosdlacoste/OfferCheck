@@ -122,7 +122,7 @@
 
 ### 5. Implement React Components
 
-- [ ] 5.1 Create Header component
+- [x] 5.1 Create Header component
   - Display title "OfferCheck"
   - Include description about analyzing IT job offers
   - Use dark theme styling

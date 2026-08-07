@@ -83,7 +83,7 @@
   - Export to `patterns/redFlags.ts`
   - _Requirements: 8.1, 8.2, 8.3_
 
-- [ ] 3.8 Implement excessive hiring process patterns
+- [x] 3.8 Implement excessive hiring process patterns
   - Create regex for "más de 3 fases", "más de 4 fases", "múltiples pruebas técnicas", etc.
   - Export to `patterns/redFlags.ts`
   - _Requirements: 10.1, 10.2, 10.3_

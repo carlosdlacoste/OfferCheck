@@ -197,7 +197,7 @@
   - Return results and errors
   - _Requirements: 2.1, 2.2, 2.3, 11.1, 11.2, 11.3, 11.4, 11.5, 11.6_
 
-- [ ] 6.3 Implement score calculation hook
+- [x] 6.3 Implement score calculation hook
   - Extract score logic to `useScoreCalculation` hook
   - Reusable across components
   - Type-safe functions

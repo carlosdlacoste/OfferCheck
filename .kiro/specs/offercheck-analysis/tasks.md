@@ -108,7 +108,7 @@
   - Clamp between 1 and 100
   - _Requirements: 11.1, 11.2, 11.3, 11.4, 11.5, 11.6_
 
-- [ ] 4.4 Implement color coding
+- [x] 4.4 Implement color coding
   - Green for scores 80-100
   - Yellow for scores 50-79
   - Red for scores 1-49

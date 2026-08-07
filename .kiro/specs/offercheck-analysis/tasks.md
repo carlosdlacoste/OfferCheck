@@ -52,7 +52,7 @@
   - Export to `patterns/greenFlags.ts`
   - _Requirements: 3.1, 3.2, 3.3_
 
-- [ ] 3.2 Implement remote work patterns (Green Flags)
+- [x] 3.2 Implement remote work patterns (Green Flags)
   - Create regex for "100% remoto", "totalmente remoto", "remoto", "trabajo remoto"
   - Export to `patterns/greenFlags.ts`
   - _Requirements: 4.1, 4.2, 4.3, 4.4_

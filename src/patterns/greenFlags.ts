@@ -30,3 +30,29 @@ export const SALARY_PATTERNS: Pattern[] = [
     category: 'transparencia_salarial'
   }
 ];
+
+// Remote Work Patterns (Green Flags)
+// Detects: "100% remoto", "totalmente remoto", "remoto", "trabajo remoto"
+
+export const REMOTE_PATTERNS: Pattern[] = [
+  {
+    regex: /\b100%\s*remoto\b/gi,
+    name: '100% Remote',
+    category: 'modalidad_remota'
+  },
+  {
+    regex: /\btotalmente\s+remoto\b/gi,
+    name: 'Totally Remote',
+    category: 'modalidad_remota'
+  },
+  {
+    regex: /\bremoto\b/gi,
+    name: 'Remote',
+    category: 'modalidad_remota'
+  },
+  {
+    regex: /\btrabajo\s+remoto\b/gi,
+    name: 'Remote Work',
+    category: 'modalidad_remota'
+  }
+];

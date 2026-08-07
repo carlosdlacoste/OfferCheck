@@ -12,7 +12,7 @@
 
 ### 1. Project Setup and Configuration
 
-- [ ] 1.1 Initialize Vite + React + TypeScript project
+- [x] 1.1 Initialize Vite + React + TypeScript project
   - Create project with `npm create vite@latest`
   - Select React and TypeScript templates
   - Install dependencies

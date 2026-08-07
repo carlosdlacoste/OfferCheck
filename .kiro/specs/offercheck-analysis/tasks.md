@@ -78,7 +78,7 @@
   - Export to `patterns/redFlags.ts`
   - _Requirements: 7.1, 7.2, 7.3_
 
-- [ ] 3.7 Implement salary ambiguity patterns
+- [x] 3.7 Implement salary ambiguity patterns
   - Create regex for "sueldo competitivo", "sueldo a convenir", "no especificado", etc.
   - Export to `patterns/redFlags.ts`
   - _Requirements: 8.1, 8.2, 8.3_

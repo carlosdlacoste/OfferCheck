@@ -140,7 +140,7 @@
   - Support for long text input
   - _Requirements: 1.1, 1.2, 18.1_
 
-- [ ] 5.4 Create AnalyzeButton component
+- [x] 5.4 Create AnalyzeButton component
   - Central button "Analizar Oferta"
   - Loading state with disabled behavior
   - Responsive sizing

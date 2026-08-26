@@ -11,6 +11,7 @@ import { LoadingIndicator } from './components/Common/LoadingIndicator'
 import { ErrorBanner } from './components/Common/ErrorBanner'
 import analyzeJobDescription from './hooks/useAnalyzer'
 import type { AnalysisResult } from './types/analysis'
+import { Check, Sparkles } from 'lucide-react'
 
 function App() {
   // State management (requirement 16.1)
@@ -84,70 +85,89 @@ function App() {
       <Header />
 
       {/* Main content area */}
-      <main className="flex-grow max-w-4xl mx-auto w-full px-4 py-8">
-        {/* Input Section */}
-        <section className="mb-8">
-          <div className="bg-slate-800 rounded-xl p-6 shadow-lg border border-slate-700">
-            <label htmlFor="job-description" className="block text-sm font-medium text-slate-300 mb-3">
-              📝 Introduce la descripción de la oferta:
-            </label>
-            <TextAreaInput
-              value={jobDescription}
-              onChange={handleInputChange}
-              placeholder="Pega aquí la descripción de la oferta de trabajo..."
-              disabled={isLoading}
-            />
-            <AnalyzeButton
-              isLoading={isLoading}
-              onClick={handleAnalyze}
-              textLength={jobDescription.length}
-            />
-          </div>
-        </section>
-
-        {/* Error Banner - shown when there's an error */}
-        {errorMessage && (
-          <section className="mb-6 animate-fade-in">
-            <ErrorBanner
-              message={errorMessage}
-              onDismiss={handleDismissError}
-            />
-          </section>
-        )}
-
-        {/* Loading Indicator - shown after 200ms delay during processing */}
-        <LoadingIndicator isLoading={isLoading} delay={200} />
-
-        {/* Results Section - shown when analysis is complete */}
-        {analysisResult && !isLoading && (
-          <section className="space-y-6 animate-fade-in">
-            <div className="text-center mb-6">
-              <h2 className="text-2xl font-semibold text-slate-100">
-                Resultado del Análisis
-              </h2>
-              <p className="text-slate-400 text-sm">
-                Procesado en {(analysisResult.processingTime).toFixed(1)}ms
-              </p>
+      <main className="mx-auto max-w-6xl px-6 pb-20 pt-16 lg:px-8 lg:pt-24">
+        <div className="grid gap-14 lg:grid-cols-[0.88fr_1.12fr] lg:items-center">
+          <div>
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-primary">
+              <Sparkles className="size-3.5" /> Antes de aplicar
             </div>
-
-            {/* Score Display */}
+            <h1 className="max-w-xl text-balance font-sans text-5xl font-semibold leading-[1.05] tracking-[-0.045em] text-foreground lg:text-6xl">
+              Lee entre líneas tu próxima oferta.
+            </h1>
+            <p className="mt-6 max-w-md text-pretty text-lg leading-8 text-muted-foreground">
+              Analiza ofertas de trabajo en IT con nuestro motor de análisis local.
+              Detecta Green Flags (aspectos positivos) y Red Flags (riesgos) para
+              que tomes decisiones informadas.
+            </p>
+            <div className="mt-8 flex items-center gap-3 text-sm text-muted-foreground">
+              <span className="flex size-7 items-center justify-center rounded-full bg-accent text-accent-foreground"><Check className="size-4" /></span>
+              Análisis claro, sin jerga de recursos humanos
+            </div>
+          </div>
+          {/* Input Section */}
+          <section className="mb-8">
             <div className="bg-slate-800 rounded-xl p-6 shadow-lg border border-slate-700">
-              <ScoreDisplay
-                score={analysisResult.score}
-                color={analysisResult.color}
+              <label htmlFor="job-description" className="block text-sm font-medium text-slate-300 mb-3">
+                📝 Introduce la descripción de la oferta:
+              </label>
+              <TextAreaInput
+                value={jobDescription}
+                onChange={handleInputChange}
+                placeholder="Pega aquí la descripción de la oferta de trabajo..."
+                disabled={isLoading}
+              />
+              <AnalyzeButton
+                isLoading={isLoading}
+                onClick={handleAnalyze}
+                textLength={jobDescription.length}
               />
             </div>
-
-            {/* Green Flags */}
-            <GreenFlagsList greenFlags={analysisResult.greenFlags} />
-
-            {/* Red Flags */}
-            <RedFlagsList redFlags={analysisResult.redFlags} />
-
-            {/* Verdict */}
-            <Verdict verdict={analysisResult.verdict} />
           </section>
-        )}
+
+          {/* Error Banner - shown when there's an error */}
+          {errorMessage && (
+            <section className="mb-6 animate-fade-in">
+              <ErrorBanner
+                message={errorMessage}
+                onDismiss={handleDismissError}
+              />
+            </section>
+          )}
+
+          {/* Loading Indicator - shown after 200ms delay during processing */}
+          <LoadingIndicator isLoading={isLoading} delay={200} />
+
+          {/* Results Section - shown when analysis is complete */}
+          {analysisResult && !isLoading && (
+            <section className="space-y-6 animate-fade-in">
+              <div className="text-center mb-6">
+                <h2 className="text-2xl font-semibold text-slate-100">
+                  Resultado del Análisis
+                </h2>
+                <p className="text-slate-400 text-sm">
+                  Procesado en {(analysisResult.processingTime).toFixed(1)}ms
+                </p>
+              </div>
+
+              {/* Score Display */}
+              <div className="bg-slate-800 rounded-xl p-6 shadow-lg border border-slate-700">
+                <ScoreDisplay
+                  score={analysisResult.score}
+                  color={analysisResult.color}
+                />
+              </div>
+
+              {/* Green Flags */}
+              <GreenFlagsList greenFlags={analysisResult.greenFlags} />
+
+              {/* Red Flags */}
+              <RedFlagsList redFlags={analysisResult.redFlags} />
+
+              {/* Verdict */}
+              <Verdict verdict={analysisResult.verdict} />
+            </section>
+          )}
+        </div>
       </main>
 
       {/* Footer - requirement 16.1 */}

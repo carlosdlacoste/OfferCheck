@@ -79,7 +79,7 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-900 text-slate-100 flex flex-col font-sans">
+    <>
       {/* Header - requirement 16.1 */}
       <Header />
 
@@ -152,7 +152,7 @@ function App() {
 
       {/* Footer - requirement 16.1 */}
       <Footer />
-    </div>
+    </>
   )
 }
 

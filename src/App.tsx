@@ -11,7 +11,7 @@ import { LoadingIndicator } from './components/Common/LoadingIndicator'
 import { ErrorBanner } from './components/Common/ErrorBanner'
 import analyzeJobDescription from './hooks/useAnalyzer'
 import type { AnalysisResult } from './types/analysis'
-import { Check, Sparkles } from 'lucide-react'
+import { Check, Sparkles, ClipboardCheck } from 'lucide-react'
 
 function App() {
   // State management (requirement 16.1)
@@ -105,22 +105,29 @@ function App() {
             </div>
           </div>
           {/* Input Section */}
-          <section className="mb-8">
-            <div className="bg-slate-800 rounded-xl p-6 shadow-lg border border-slate-700">
-              <label htmlFor="job-description" className="block text-sm font-medium text-slate-300 mb-3">
-                📝 Introduce la descripción de la oferta:
-              </label>
-              <TextAreaInput
-                value={jobDescription}
-                onChange={handleInputChange}
-                placeholder="Pega aquí la descripción de la oferta de trabajo..."
-                disabled={isLoading}
-              />
-              <AnalyzeButton
-                isLoading={isLoading}
-                onClick={handleAnalyze}
-                textLength={jobDescription.length}
-              />
+          <section className="rounded-3xl border border-border bg-card p-3 shadow-[0_24px_70px_-32px_var(--primary)]">
+            <div className="rounded-2xl bg-muted/45 p-6 sm:p-8">
+              <div className="mb-5 flex items-center justify-between gap-4">
+                <div>
+                  <h2 className="font-sans text-xl font-semibold tracking-tight">Pega la oferta aquí</h2>
+                  <p className="mt-1 text-sm text-muted-foreground">Cuanto más contexto, mejor el análisis.</p>
+                </div>
+                <ClipboardCheck className="hidden size-6 text-primary sm:block" />
+              </div>
+              <label htmlFor="offer" className="sr-only">Descripción del empleo</label>
+              <div className="bg-slate-800 rounded-xl p-6 shadow-lg border border-slate-700">
+                <TextAreaInput
+                  value={jobDescription}
+                  onChange={handleInputChange}
+                  placeholder="Pega aquí la descripción de la oferta de trabajo..."
+                  disabled={isLoading}
+                />
+                <AnalyzeButton
+                  isLoading={isLoading}
+                  onClick={handleAnalyze}
+                  textLength={jobDescription.length}
+                />
+              </div>
             </div>
           </section>
 

@@ -115,7 +115,7 @@ function App() {
                 <ClipboardCheck className="hidden size-6 text-primary sm:block" />
               </div>
               <label htmlFor="offer" className="sr-only">Descripción del empleo</label>
-              <div className="bg-slate-800 rounded-xl p-6 shadow-lg border border-slate-700">
+              <div className="rounded-xl p-6">
                 <TextAreaInput
                   value={jobDescription}
                   onChange={handleInputChange}

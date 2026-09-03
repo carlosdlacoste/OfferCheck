@@ -1,4 +1,4 @@
-import { forwardRef, useRef, useEffect } from 'react'
+import { forwardRef} from 'react'
 
 interface TextAreaInputProps {
   value: string
@@ -18,52 +18,37 @@ interface TextAreaInputProps {
  */
 export const TextAreaInput = forwardRef<HTMLTextAreaElement, TextAreaInputProps>(
   ({ value, onChange, placeholder = 'Pega aquí la descripción de la oferta de trabajo...', disabled = false, maxLength = 50000 }, ref) => {
-    const textareaRef = useRef<HTMLTextAreaElement>(null)
-    
-    // Auto-resize textarea based on content
-    useEffect(() => {
-      const textarea = textareaRef.current
-      if (textarea) {
-        textarea.style.height = 'auto'
-        textarea.style.height = `${textarea.scrollHeight}px`
-      }
-    }, [value])
 
     const handleInput = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
       const textarea = e.target
       // Ensure we don't exceed maxLength
       if (textarea.value.length <= maxLength) {
         onChange(e)
-        // Adjust height after input
-        setTimeout(() => {
-          textarea.style.height = 'auto'
-          textarea.style.height = `${textarea.scrollHeight}px`
-        }, 0)
       }
     }
 
     return (
-      <div className="relative w-full">
+      <div className="flex w-full flex-col gap-1.5">
         <label htmlFor="job-description" className="sr-only">
           Descripción de la oferta de trabajo
         </label>
         <textarea
           id="job-description"
-          ref={ref || textareaRef}
+          ref={ref}
           value={value}
           onChange={handleInput}
           placeholder={placeholder}
           disabled={disabled}
           maxLength={maxLength}
           rows={8}
-          className="min-h-56 w-full resize-none rounded-2xl border border-border bg-background p-4 text-sm leading-6 text-foreground outline-none transition-shadow placeholder:text-muted-foreground/70 focus:border-primary focus:ring-4 focus:ring-primary/10"
+          className="h-56 w-full resize-none overflow-y-auto rounded-2xl border border-border bg-background p-4 text-sm leading-6 text-foreground outline-none transition-shadow placeholder:text-muted-foreground/70 focus:border-primary focus:ring-4 focus:ring-primary/10"
           aria-label="Área de texto para pegar la descripción de la oferta de trabajo"
           aria-describedby="input-hint"
           spellCheck={false}
         />
         <div 
           id="input-hint" 
-          className="absolute bottom-2 right-3 text-xs text-slate-500 pointer-events-none"
+          className="flex justify-end text-xs text-slate-500 pointer-events-none"
           aria-hidden="true"
         >
           {value.length} / {maxLength} caracteres

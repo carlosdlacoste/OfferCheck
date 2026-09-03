@@ -51,9 +51,9 @@ export const AnalyzeButton = ({ isLoading, onClick, textLength }: AnalyzeButtonP
               ? 'bg-primary cursor-not-allowed'
               : 'bg-primary hover:shadow-[0_24px_70px_-32px_var(--primary)] active:scale-95'
           }
-          focus:outline-none focus:ring-2 focus:ring-green-500/50 focus:ring-offset-2 focus:ring-offset-slate-900
+          focus:border-primary focus:ring-4 focus:ring-primary/10
           disabled:opacity-50 disabled:cursor-not-allowed
-          w-full max-w-md
+          w-full
         `}
         aria-label="Analizar oferta de trabajo"
         aria-disabled={isLoading || textLength === 0}

@@ -115,7 +115,7 @@ function App() {
                 <ClipboardCheck className="hidden size-6 text-primary sm:block" />
               </div>
               <label htmlFor="offer" className="sr-only">Descripción del empleo</label>
-              <div className="rounded-xl p-6">
+              {/* <div className="rounded-xl p-6"> */}
                 <TextAreaInput
                   value={jobDescription}
                   onChange={handleInputChange}
@@ -127,7 +127,7 @@ function App() {
                   onClick={handleAnalyze}
                   textLength={jobDescription.length}
                 />
-              </div>
+              {/* </div> */}
             </div>
           </section>
 

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { ArrowRight } from 'lucide-react'
 
 interface AnalyzeButtonProps {
   isLoading: boolean
@@ -37,19 +38,18 @@ export const AnalyzeButton = ({ isLoading, onClick, textLength }: AnalyzeButtonP
   }
 
   return (
-    <div className="flex justify-center items-center gap-2 my-6">
+    <div className="flex justify-center items-center gap-2 my-2">
       <button
         type="button"
         onClick={handleButtonClick}
         disabled={isLoading || textLength === 0}
         className={`
-          relative px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-200
-          flex items-center gap-2
+          mt-6 flex w-full items-center justify-center gap-2 rounded-xl px-5 py-3.5 text-sm font-semibold text-primary-foreground transition-all hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-40
           ${isLoading 
-            ? 'bg-slate-700 text-slate-400 cursor-not-allowed' 
+            ? 'bg-primary cursor-not-allowed' 
             : textLength === 0
-              ? 'bg-slate-700 text-slate-400 cursor-not-allowed'
-              : 'bg-green-600 hover:bg-green-500 text-white shadow-lg hover:shadow-green-500/30 active:scale-95'
+              ? 'bg-primary cursor-not-allowed'
+              : 'bg-primary hover:shadow-[0_24px_70px_-32px_var(--primary)] active:scale-95'
           }
           focus:outline-none focus:ring-2 focus:ring-green-500/50 focus:ring-offset-2 focus:ring-offset-slate-900
           disabled:opacity-50 disabled:cursor-not-allowed
@@ -58,8 +58,7 @@ export const AnalyzeButton = ({ isLoading, onClick, textLength }: AnalyzeButtonP
         aria-label="Analizar oferta de trabajo"
         aria-disabled={isLoading || textLength === 0}
       >
-        <span>🔍</span>
-        <span>Analizar Oferta</span>
+        Analizar Oferta <ArrowRight className="size-4" />
         
         {/* Loading spinner overlay */}
         {isLoading && showLoadingIndicator && (

@@ -13,11 +13,11 @@ interface GreenFlagsListProps {
 export function GreenFlagsList({ greenFlags }: GreenFlagsListProps) {
   if (greenFlags.length === 0) {
     return (
-      <div className="bg-slate-800/30 border border-slate-700/50 rounded-lg p-6">
+      <div className="bg-card border-border rounded-lg p-6">
         <div className="text-green-400 font-medium mb-2">
           🟢 Green Flags Encontradas
         </div>
-        <div className="text-slate-400 text-sm">
+        <div className="text-foreground text-sm">
           No se detectaron green flags en esta descripción
         </div>
       </div>
@@ -25,8 +25,8 @@ export function GreenFlagsList({ greenFlags }: GreenFlagsListProps) {
   }
 
   return (
-    <div className="bg-slate-800/30 border border-slate-700/50 rounded-lg p-6">
-      <div className="text-green-400 font-medium mb-4 flex items-center gap-2">
+    <div>
+      <div className="text-green-400 font-medium mb-4 flex items-center justify-center gap-2">
         🟢 Green Flags Encontradas: {greenFlags.length}
       </div>
       
@@ -34,7 +34,7 @@ export function GreenFlagsList({ greenFlags }: GreenFlagsListProps) {
         {greenFlags.map((flag, index) => (
           <li 
             key={index} 
-            className="bg-slate-800/50 border border-green-500/20 rounded-md p-3 hover:border-green-400/30 transition-colors"
+            className="bg-card border border-border rounded-md p-3 hover:border-border transition-colors"
           >
             <div className="flex items-start gap-2">
               <span className="text-green-400 text-sm font-medium mt-0.5">
@@ -46,7 +46,7 @@ export function GreenFlagsList({ greenFlags }: GreenFlagsListProps) {
                 </span>
               )}
             </div>
-            <div className="mt-2 text-slate-300 text-sm italic">
+            <div className="mt-2 text-foreground text-sm italic">
               "{flag.matchedText}"
             </div>
           </li>

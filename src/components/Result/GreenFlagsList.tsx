@@ -13,12 +13,14 @@ interface GreenFlagsListProps {
 export function GreenFlagsList({ greenFlags }: GreenFlagsListProps) {
   if (greenFlags.length === 0) {
     return (
-      <div className="bg-card border-border rounded-lg p-6">
-        <div className="text-green-400 font-medium mb-2">
+      <div>
+        <div className="text-green-400 font-medium mb-4 flex items-center justify-center gap-2">
           🟢 Green Flags Encontradas
         </div>
-        <div className="text-foreground text-sm">
-          No se detectaron green flags en esta descripción
+        <div className="bg-card border-border rounded-md p-6">
+          <div className="text-foreground text-sm">
+            No se detectaron green flags en esta descripción
+          </div>
         </div>
       </div>
     );

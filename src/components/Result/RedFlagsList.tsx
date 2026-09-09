@@ -13,12 +13,14 @@ interface RedFlagsListProps {
 export function RedFlagsList({ redFlags }: RedFlagsListProps) {
   if (redFlags.length === 0) {
     return (
-      <div className="bg-card border border-border rounded-lg p-6">
-        <div className="text-red-400 font-medium mb-2">
+      <div>
+        <div className="text-red-400 font-medium mb-4 flex items-center justify-center gap-2">
           🔴 Red Flags Detectadas
         </div>
-        <div className="text-foreground text-sm">
-          No se detectaron red flags en esta descripción
+        <div className="bg-card border border-border rounded-md p-6">
+          <div className="text-foreground text-sm">
+            No se detectaron red flags en esta descripción
+          </div>
         </div>
       </div>
     );

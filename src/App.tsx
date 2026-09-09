@@ -147,34 +147,36 @@ function App() {
 
           {/* Results Section - shown when analysis is complete */}
           {analysisResult && !isLoading && (
-            <section className="space-y-6 animate-fade-in mt-16">
-              <div className="text-center mb-6">
-                <h2 className="text-2xl font-semibold text-slate-100">
-                  Resultado del Análisis
-                </h2>
-                <p className="text-slate-400 text-sm">
-                  Procesado en {(analysisResult.processingTime).toFixed(1)}ms
-                </p>
+            <section className="mt-16 -mb-20 w-screen relative left-1/2 -translate-x-1/2 border-t border-border bg-muted/35 py-16 animate-fade-in">
+              <div className="mx-auto max-w-6xl px-6 lg:px-8 space-y-8">
+                <div className="text-center mb-6">
+                  <h2 className="text-2xl font-semibold text-slate-100">
+                    Resultado del Análisis
+                  </h2>
+                  <p className="text-slate-400 text-sm">
+                    Procesado en {(analysisResult.processingTime).toFixed(1)}ms
+                  </p>
+                </div>
+
+                {/* Score Display */}
+                <div className="bg-slate-800 rounded-xl p-6 shadow-lg border border-slate-700">
+                  <ScoreDisplay
+                    score={analysisResult.score}
+                    color={analysisResult.color}
+                  />
+                </div>
+
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:gap-8">
+                  {/* Green Flags */}
+                  <GreenFlagsList greenFlags={analysisResult.greenFlags} />
+
+                  {/* Red Flags */}
+                  <RedFlagsList redFlags={analysisResult.redFlags} />
+                </div>
+
+                {/* Verdict */}
+                <Verdict verdict={analysisResult.verdict} />
               </div>
-
-              {/* Score Display */}
-              <div className="bg-slate-800 rounded-xl p-6 shadow-lg border border-slate-700">
-                <ScoreDisplay
-                  score={analysisResult.score}
-                  color={analysisResult.color}
-                />
-              </div>
-
-              <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:gap-8">
-                {/* Green Flags */}
-                <GreenFlagsList greenFlags={analysisResult.greenFlags} />
-
-                {/* Red Flags */}
-                <RedFlagsList redFlags={analysisResult.redFlags} />
-              </div>
-
-              {/* Verdict */}
-              <Verdict verdict={analysisResult.verdict} />
             </section>
           )}
       </main>

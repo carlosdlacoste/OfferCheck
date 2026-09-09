@@ -131,6 +131,7 @@ function App() {
             </div>
           </section>
 
+        </div>
           {/* Error Banner - shown when there's an error */}
           {errorMessage && (
             <section className="mb-6 animate-fade-in">
@@ -146,7 +147,7 @@ function App() {
 
           {/* Results Section - shown when analysis is complete */}
           {analysisResult && !isLoading && (
-            <section className="space-y-6 animate-fade-in">
+            <section className="space-y-6 animate-fade-in mt-16">
               <div className="text-center mb-6">
                 <h2 className="text-2xl font-semibold text-slate-100">
                   Resultado del Análisis
@@ -164,17 +165,18 @@ function App() {
                 />
               </div>
 
-              {/* Green Flags */}
-              <GreenFlagsList greenFlags={analysisResult.greenFlags} />
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:gap-8">
+                {/* Green Flags */}
+                <GreenFlagsList greenFlags={analysisResult.greenFlags} />
 
-              {/* Red Flags */}
-              <RedFlagsList redFlags={analysisResult.redFlags} />
+                {/* Red Flags */}
+                <RedFlagsList redFlags={analysisResult.redFlags} />
+              </div>
 
               {/* Verdict */}
               <Verdict verdict={analysisResult.verdict} />
             </section>
           )}
-        </div>
       </main>
 
       {/* Footer - requirement 16.1 */}

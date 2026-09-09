@@ -159,7 +159,7 @@ function App() {
                 </div>
 
                 {/* Score Display */}
-                <div className="bg-slate-800 rounded-xl p-6 shadow-lg border border-slate-700">
+                <div className="bg-card rounded-xl p-6 shadow-lg border border-border">
                   <ScoreDisplay
                     score={analysisResult.score}
                     color={analysisResult.color}

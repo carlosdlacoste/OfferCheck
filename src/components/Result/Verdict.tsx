@@ -14,7 +14,7 @@ export function Verdict({ verdict }: VerdictProps) {
   const { title, description, advice, flagsThatInfluenced } = verdict;
 
   return (
-    <div className="bg-slate-800/30 border border-slate-700/50 rounded-lg p-6">
+    <div className="bg-card border border-border rounded-lg p-6 shadow-[0_24px_70px_-32px_var(--primary)]">
       <div className="text-slate-100 font-medium mb-2 flex items-center gap-2">
         💡 Veredicto Rápido
       </div>

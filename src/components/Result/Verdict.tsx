@@ -29,7 +29,7 @@ export function Verdict({ verdict }: VerdictProps) {
       </div>
       
       {advice && (
-        <div className="bg-slate-800/50 border border-slate-600/30 rounded-md p-3 mb-3">
+        <div className="bg-muted/45 border border-slate-600/30 rounded-md p-3 mb-3">
           <div className="text-slate-300 text-sm italic">
             "{advice}"
           </div>
@@ -45,7 +45,7 @@ export function Verdict({ verdict }: VerdictProps) {
             {flagsThatInfluenced.map((flag, index) => (
               <li 
                 key={index} 
-                className="bg-slate-800/40 rounded px-2 py-1 text-xs"
+                className="bg-muted/45 rounded px-2 py-1 text-xs"
               >
                 {flag}
               </li>

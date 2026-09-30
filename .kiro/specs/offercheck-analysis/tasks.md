@@ -211,7 +211,7 @@
 
 ### 7. Testing
 
-- [ ] 7.1 Write unit tests for pattern matching
+- [x] 7.1 Write unit tests for pattern matching
   - Test salary patterns with examples
   - Test remote work patterns
   - Test flexibility patterns
